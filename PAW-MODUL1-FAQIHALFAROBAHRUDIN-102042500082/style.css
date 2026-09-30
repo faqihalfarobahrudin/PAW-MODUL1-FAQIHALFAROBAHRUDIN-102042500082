@@ -1,0 +1,78 @@
+/* ===== WARNA (ubah di sini) ===== */
+:root {
+    --utama: #2563eb;
+    --latar: #f3f4f6;
+    --kartu: #ffffff;
+    --teks: #1f2937;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--latar);
+    color: var(--teks);
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--kartu);
+}
+.navbar nav { display: flex; gap: 20px; }
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+    background: var(--utama);
+    color: white;
+}
+.hero p { margin-top: 10px; }
+
+/* Katalog */
+main { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+.judul { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: var(--kartu);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.card:hover { transform: translateY(-5px); transition: transform 0.2s; }
+.card small { color: gray; }
+.harga { font-size: 1.3rem; font-weight: bold; }
+.diskon { color: red; font-size: .8rem; }
+.ok { color: green; }
+.habis { color: red; }
+
+button {
+    background: var(--utama);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button:disabled { background: #ccc; cursor: not-allowed; }
+
+/* Footer */
+footer { text-align: center; padding: 20px; color: gray; }
+
+/* Responsive */
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
